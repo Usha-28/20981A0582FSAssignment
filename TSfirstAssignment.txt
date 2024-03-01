@@ -1,0 +1,81 @@
+//BASIC TYPES
+
+let num:number=234;
+let str:string="Abcd";
+let b:boolean=true;
+let arr:number[]=[1,2,3,4];
+let t:[string,number]=["xyz",123];
+enum w {"Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"}
+
+console.log(num)
+console.log(str)
+console.log(b)
+console.log(arr)
+console.log(t)
+console.log(w[0])
+
+
+//Write a function called add that takes two parameters of type number and returns their sum.
+
+function add(a:number,b:number){
+    return a+b;
+}
+console.log(add(4,5))
+
+
+//Write a function called capitalize that takes a parameter of type string and returns the capitalized version of it.
+
+function capitalize(x:string){
+    return x.toUpperCase();
+}
+console.log(capitalize("Usha"));
+
+
+//Define an interface called Person with the following properties:name of type string, age of type number, email of type string
+// Declare a variable user of type Person and initialize it with sample data.
+
+interface Person{
+    name:string,
+    age:number,
+    email:string
+}
+
+let user:Person={
+    name:"usha",
+    age:20,
+    email:"absgyedb@gmail.com"
+}
+console.log(user);
+
+
+//Create a class called Car with the following properties:make of type string ,model of type string,year of type number
+// Implement a method displayInfo which logs the information about the car.
+
+class Car{
+    private make:string;
+    private model:string;
+    private year:number;
+
+    constructor(make,model,year){
+        this.make=make;
+        this.model=model;
+        this.year=year;
+    }
+
+    displayInfo(){
+        console.log("make:"+this.make);
+        console.log("model:"+this.model);
+        console.log("year"+this.year);
+    }
+}
+let c=new Car("BMW","X5",2005);
+c.displayInfo()
+
+
+//Write a generic function called reverseArray that takes an array of any type and returns a reversed version of that array.
+
+function reverseArray<x,y,z>(v1:x,v2:y,v3:z):[z,y,x]{
+    return [v3,v2,v1];
+}
+console.log(reverseArray<number,string,boolean>(33,"abc",true));
+
